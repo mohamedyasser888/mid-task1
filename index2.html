@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head><title>mid-task2</title></head>
+<body>
+    <h1 style="text-align: center;">Mohamed yasser - 21100838</h1>
+    <button type="button" onclick="stu()">show students</button>
+    <p id="one"></p>
+    <button type="button" onclick="showtranspict()">show transcript</button>
+    <p id="two"></p>
+    <button type="button" onclick="add()">add student</button><br>
+    <p></p>
+    <button type="button" onclick="del()">delete student</button>
+    
+
+    <script>
+        let students=[
+            {name:"mohamed",id:"21100838",level:"5"},
+            {name:"yasser",id:"21100837",level:"4"},
+            {name:"adam",id:"21100836",level:"3"},
+            {name:"ahmed",id:"21100835",level:"2"},
+            {name:"jomana",id:"21100834",level:"1"}
+        ]
+        function stu() {
+            let result = "The students are:<br>";
+            for (let stu of students) {
+                result += "The student name is " + stu.name +
+                          " // ID: " + stu.id +
+                          " // Level: " + stu.level + "<br>";
+            }
+            document.getElementById("one").innerHTML = result;
+        }
+        function showtranspict(){
+            let subjects=[
+                {name:"math",degree:"80"},
+                {name:"engllish",degree:"50"},
+                {name:"arbic",degree:"70"},
+                {name:"social studies",degree:"95"},
+                {name:"web programming",degree:"100"}
+            ]
+            let output = "the students transcript is" + "<br>"
+            for(let stu of students){
+                output+= "the student name is " + stu.name + " // the student id is " + stu.id + " // and the student level is " + stu.level + "<br>"
+                for (let sub of subjects){
+                    output+= " the subject name is " + sub.name + " // the subject degree " + sub.degree + "<br>"
+                    
+
+                }
+                output+="----------------------------------------------------------------------------------------" + "<br>"
+            }
+            document.getElementById("two").innerHTML=output
+
+        }
+        function add(){
+           let name=prompt("please enter your name")
+           let id=prompt("please enter your id")
+           let level=prompt("please enter your level")
+           students.push({name:name,id:id,level})
+           stu()
+        }
+          function del(){
+          let id =prompt("please enter your id ")
+          students=students.filter(function(stu)
+        {
+            return stu.id!=id
+        
+        })
+            stu()
+         
+          
+        }
+        
+
+    </script>
+</body>
+</html>
