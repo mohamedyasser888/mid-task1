@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head><title>mid-task1</title></head>
+<body>
+    <h1 style="text-align: center;">mohamed yasser-21100838</h1>
+    <p>please enter your first number</p>
+    <input id="1" type="number" placeholder="first number"><br>
+    <p>please enter your second number</p>
+    <input id="2" type="number" placeholder="second number"><br>
+    <p></p>
+    <button type="button" onclick="addition() " style="background-color: green;">addition</button><br>
+     <button type="button" onclick="substract() " style="background-color: rgb(8, 53, 255);">substract</button><br>
+      <button type="button" onclick="multiply() " style="background-color: rgb(255, 2, 2);">multiply</button><br>
+       <button type="button" onclick="divide() " style="background-color: rgb(140, 255, 8);">divide</button><br>
+    <p id="result">the result is =</p><br>
+    <script>
+        function addition(){
+            num1=parseInt(document.getElementById("1").value)
+            num2=parseInt(document.getElementById("2").value)
+            result=document.getElementById("result").innerHTML="the result is " + (num1+num2)
+        }
+        function substract(){
+            num1=parseInt(document.getElementById("1").value)
+            num2=parseInt(document.getElementById("2").value)
+            result=document.getElementById("result").innerHTML="the result is " + (num1-num2)
+        }
+        function multiply(){
+            num1=parseInt(document.getElementById("1").value)
+            num2=parseInt(document.getElementById("2").value) 
+            result=document.getElementById("result").innerHTML="the result is " + (num1*num2)
+        }
+        function divide(){
+            num1=parseInt(document.getElementById("1").value)
+            num2=parseInt(document.getElementById("2").value)
+            result=document.getElementById("result").innerHTML="the result is " + (num1/num2)
+        }
+
+    </script>
+</body>
+</html>
